@@ -1,0 +1,6 @@
+@CrimsonApi_HostAddress = http://localhost:5187
+
+GET {{CrimsonApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
