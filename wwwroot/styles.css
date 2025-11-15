@@ -23,6 +23,21 @@ body {
   background-color: var(--white) !important;
   border-bottom: 1px solid var(--mid-gray);
 }
+.navbar.bg-dark {
+  background: linear-gradient(135deg, var(--crimson-dark) 0%, var(--crimson) 100%) !important;
+  border-bottom: none;
+}
+.navbar.bg-dark .navbar-brand {
+  color: var(--white) !important;
+}
+.navbar.bg-dark .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+.navbar.bg-dark .nav-link:hover,
+.navbar.bg-dark .nav-link.active {
+  color: var(--white) !important;
+  border-bottom: 2px solid var(--white);
+}
 .navbar-brand { color: var(--crimson) !important; font-weight: 700; letter-spacing: 0.5px; }
 .nav-link { color: var(--charcoal) !important; margin: 0 0.3rem; transition: var(--transition); }
 .nav-link:hover, .nav-link.active { color: var(--crimson) !important; font-weight: 600; border-bottom: 2px solid var(--crimson); }
@@ -111,4 +126,171 @@ canvas { background: var(--white); border-radius: var(--radius); padding: 0.5rem
 .reports-toolbar .btn { flex: 1 1 10rem; }
 @media (min-width: 1200px) {
   .reports-toolbar .btn { flex: 0 0 auto; }
+}
+
+/* ---------- Hero Section (Home Page) ---------- */
+.hero-section {
+  background: 
+    linear-gradient(135deg, var(--crimson) 0%, var(--crimson-dark) 100%),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(0, 0, 0, 0.03) 10px,
+      rgba(0, 0, 0, 0.03) 20px
+    );
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: -1px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    /* Stadium seating pattern effect */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 98px,
+      rgba(255, 255, 255, 0.03) 98px,
+      rgba(255, 255, 255, 0.03) 100px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 98px,
+      rgba(255, 255, 255, 0.03) 98px,
+      rgba(255, 255, 255, 0.03) 100px
+    ),
+    /* Center court/field lines effect */
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.08) 48%,
+      rgba(255, 255, 255, 0.08) 52%,
+      transparent 100%
+    ),
+    /* Radial spotlight effect */
+    radial-gradient(
+      ellipse 80% 50% at 50% 0%,
+      rgba(255, 255, 255, 0.15) 0%,
+      transparent 50%
+    );
+  opacity: 1;
+  pointer-events: none;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(245, 245, 245, 0.15) 100%);
+  pointer-events: none;
+}
+
+.hero-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-logo {
+  max-width: 200px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+/* ---------- Feature Icons ---------- */
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: var(--transition);
+}
+
+.feature-icon:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.feature-icon i {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.feature-icon-lg {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-dark) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: var(--transition);
+}
+
+.feature-icon-lg:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(166, 15, 45, 0.3);
+}
+
+.feature-icon-lg i {
+  font-size: 2.5rem;
+  color: var(--white);
+}
+
+/* ---------- Feature Cards ---------- */
+.feature-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: var(--transition);
+  height: 100%;
+  border-top: 4px solid var(--crimson);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- Hero Features Grid ---------- */
+.hero-features {
+  padding: 2rem;
+}
+
+@media (max-width: 991px) {
+  .hero-section {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+  
+  .min-vh-75 {
+    min-height: auto;
+    padding: 2rem 0;
+  }
 }
