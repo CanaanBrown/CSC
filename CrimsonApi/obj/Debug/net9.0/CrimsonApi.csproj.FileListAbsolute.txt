@@ -74,3 +74,4 @@ C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.
 C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\CrimsonApi.pdb
 C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\CrimsonApi.genruntimeconfig.cache
 C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\ref\CrimsonApi.dll
+C:\Users\jklin\onedrive\desktop\mis 330\groupproj\CSC\CrimsonApi\bin\Debug\net9.0\BCrypt.Net-Next.dll

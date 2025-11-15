@@ -580,9 +580,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.querySelectorAll('[data-bs-toggle="tab"]').forEach(a => {
     a.addEventListener("shown.bs.tab", async (ev) => {
       const id = ev.target.getAttribute("data-bs-target") || ev.target.getAttribute("href");
-      if (id === "#tab-neworder") await initNewOrder();
-      if (id === "#tab-orders") await loadOrders();
-      if (id === "#tab-reports") await loadReports();
+      if (id === "#admin-neworder" || id === "#tab-neworder") await initNewOrder();
+      if (id === "#admin-orders" || id === "#tab-orders") await loadOrders();
+      if (id === "#admin-reports" || id === "#tab-reports") await loadReports();
     });
   });
 
