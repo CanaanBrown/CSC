@@ -9,364 +9,515 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
   <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center" href="#">
+    <a class="navbar-brand d-flex align-items-center" href="#" onclick="showTab('tab-home'); return false;">
       <img src="images/logo.png" alt="Crimson Sports Collectibles Logo" height="48" class="me-2" />
+      <span class="d-none d-sm-inline">Crimson Sports Collectibles</span>
     </a>
-    <ul class="navbar-nav ms-auto" role="tablist">
-      <li class="nav-item" role="presentation">
-        <a class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#tab-products">Products</a>
-      </li>
-      <li class="nav-item" role="presentation">
-        <a class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#tab-neworder">New Order</a>
-      </li>
-      <li class="nav-item" role="presentation">
-        <a class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#tab-orders">Orders</a>
-      </li>
-      <li class="nav-item" role="presentation">
-        <a class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#tab-reports">Reports</a>
-      </li>
-    </ul>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#tab-home" onclick="showTab('tab-home')">Home</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#tab-admin" onclick="showTab('tab-admin')">Admin</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#tab-employee" onclick="showTab('tab-employee')">Employee</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
-<main class="container py-4">
+<main>
   <div class="alert alert-warning d-none" id="toast"></div>
   <div class="tab-content">
 
-    <!-- ============= PRODUCTS ============= -->
-    <section class="tab-pane fade show active" id="tab-products" role="tabpanel">
-      <div class="section-card">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title">Products</h2>
-            <div class="section-subtitle">Inventory, filters, quick actions & export</div>
-          </div>
-          <div class="d-flex gap-2">
-            <button class="btn btn-outline-secondary" id="btnExportProducts"><i class="bi bi-download me-1"></i>Export CSV</button>
-            <button class="btn btn-outline-primary" id="btnRefreshProducts"><i class="bi bi-arrow-repeat me-1"></i>Refresh</button>
-          </div>
-        </div>
-
-        <!-- KPIs -->
-        <div class="row g-3 mb-3">
-          <div class="col-sm-4">
-            <div class="kpi-card"><div class="kpi-label">Total SKUs</div><div class="kpi-value" id="kpiSkus">0</div></div>
-          </div>
-          <div class="col-sm-4">
-            <div class="kpi-card"><div class="kpi-label">Low-stock SKUs</div><div class="kpi-value" id="kpiLow">0</div></div>
-          </div>
-          <div class="col-sm-4">
-            <div class="kpi-card"><div class="kpi-label">Avg Price</div><div class="kpi-value" id="kpiAvg">$0.00</div></div>
-          </div>
-        </div>
-
-        <!-- Toolbar -->
-        <div class="row g-2 align-items-end mb-2">
-          <div class="col-lg-4">
-            <label class="form-label">Search</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="bi bi-search"></i></span>
-              <input id="txtSearch" type="search" class="form-control" placeholder="name, category, sport..." />
-              <button id="btnClearSearch" class="btn btn-outline-secondary" type="button">Clear</button>
+    <!-- ============= HOME PAGE (MARKETING) ============= -->
+    <section class="tab-pane fade show active" id="tab-home" role="tabpanel">
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <div class="container">
+          <div class="row align-items-center min-vh-75 py-5">
+            <div class="col-lg-6 text-center text-lg-start">
+              <img src="images/logo.png" alt="Crimson Sports Collectibles Logo" class="hero-logo mb-4" />
+              <h1 class="display-4 fw-bold mb-3 text-white">Crimson Sports Collectibles</h1>
+              <p class="lead text-white-50 mb-4">Your premier destination for authentic sports memorabilia, trading cards, and collectibles. Discover rare finds and build your collection with trusted items from your favorite teams and athletes.</p>
+              <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                <button class="btn btn-primary btn-lg px-4" onclick="showTab('tab-admin')">
+                  <i class="bi bi-shield-check me-2"></i>Admin Portal
+                </button>
+                <button class="btn btn-outline-light btn-lg px-4" onclick="showTab('tab-employee')">
+                  <i class="bi bi-person-badge me-2"></i>Employee Portal
+                </button>
+              </div>
+            </div>
+            <div class="col-lg-6 text-center mt-5 mt-lg-0">
+              <div class="hero-features">
+                <div class="row g-4">
+                  <div class="col-6">
+                    <div class="feature-icon">
+                      <i class="bi bi-card-checklist"></i>
+                    </div>
+                    <h5 class="text-white mt-3">Trading Cards</h5>
+                  </div>
+                  <div class="col-6">
+                    <div class="feature-icon">
+                      <i class="bi bi-trophy"></i>
+                    </div>
+                    <h5 class="text-white mt-3">Memorabilia</h5>
+                  </div>
+                  <div class="col-6">
+                    <div class="feature-icon">
+                      <i class="bi bi-bag"></i>
+                    </div>
+                    <h5 class="text-white mt-3">Apparel</h5>
+                  </div>
+                  <div class="col-6">
+                    <div class="feature-icon">
+                      <i class="bi bi-award"></i>
+                    </div>
+                    <h5 class="text-white mt-3">Collectibles</h5>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-sm-3">
-            <label class="form-label">Category</label>
-            <select id="selCategory" class="form-select">
-              <option value="">All</option>
-            </select>
-          </div>
-          <div class="col-sm-3">
-            <label class="form-label">Sport</label>
-            <select id="selSport" class="form-select">
-              <option value="">All</option>
-            </select>
-          </div>
-          <div class="col-sm-2">
-            <label class="form-label">Sort</label>
-            <select id="selSort" class="form-select">
-              <option value="name-asc">Name (A–Z)</option>
-              <option value="price-asc">Price (low→high)</option>
-              <option value="price-desc">Price (high→low)</option>
-              <option value="stock-asc">Stock (low→high)</option>
-              <option value="stock-desc">Stock (high→low)</option>
-            </select>
-          </div>
         </div>
+      </div>
 
-        <!-- Table -->
-        <div class="table-responsive">
-          <table class="table table-sm table-hover align-middle sticky-header" id="tblProducts">
-            <thead class="table-dark">
-              <tr>
-                <th>Name</th><th>Category</th><th>Sport</th>
-                <th class="text-end">Price</th><th class="text-end">Stock</th><th class="text-end">Actions</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-          <div id="emptyProducts" class="text-center text-muted py-3 d-none">No products match the filters.</div>
+      <!-- Features Section -->
+      <div class="container py-5">
+        <div class="row g-4 mb-5">
+          <div class="col-md-4">
+            <div class="feature-card text-center p-4">
+              <div class="feature-icon-lg mb-3">
+                <i class="bi bi-check-circle"></i>
+              </div>
+              <h4 class="h5 mb-3">Authentic Items</h4>
+              <p class="text-muted">Every item is verified for authenticity, ensuring you get genuine collectibles from trusted sources.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card text-center p-4">
+              <div class="feature-icon-lg mb-3">
+                <i class="bi bi-box-seam"></i>
+              </div>
+              <h4 class="h5 mb-3">Wide Selection</h4>
+              <p class="text-muted">Browse our extensive inventory of sports collectibles across multiple categories and sports.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card text-center p-4">
+              <div class="feature-icon-lg mb-3">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h4 class="h5 mb-3">Secure Transactions</h4>
+              <p class="text-muted">Safe and secure ordering system with real-time inventory management and order tracking.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ============= NEW ORDER ============= -->
-    <section class="tab-pane fade" id="tab-neworder" role="tabpanel">
-      <div class="section-card">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title">New Order</h2>
-            <div class="section-subtitle">1) Customer • 2) Lines • 3) Review & Submit</div>
-          </div>
-          <div class="d-flex gap-2">
-            <button type="button" class="btn btn-outline-secondary" id="btnAddLine"><i class="bi bi-plus-circle me-1"></i>Add Line</button>
-            <button type="button" class="btn btn-outline-danger" id="btnClear"><i class="bi bi-x-circle me-1"></i>Clear</button>
-          </div>
-        </div>
+    <!-- ============= ADMIN ============= -->
+    <section class="tab-pane fade" id="tab-admin" role="tabpanel">
+      <div class="container py-4">
+        <!-- Admin Sub-nav -->
+        <ul class="nav nav-tabs mb-4" role="tablist" id="adminTabs">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="admin-products-tab" data-bs-toggle="tab" data-bs-target="#admin-products" type="button" role="tab">Products</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="admin-neworder-tab" data-bs-toggle="tab" data-bs-target="#admin-neworder" type="button" role="tab">New Order</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="admin-orders-tab" data-bs-toggle="tab" data-bs-target="#admin-orders" type="button" role="tab">Orders</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="admin-reports-tab" data-bs-toggle="tab" data-bs-target="#admin-reports" type="button" role="tab">Reports</button>
+          </li>
+        </ul>
 
-        <form id="orderForm" class="mb-3" novalidate>
-          <div class="row g-3">
-            <div class="col-lg-4">
-              <label class="form-label">Customer</label>
-              <select class="form-select" id="selCustomer" required></select>
-              <div class="invalid-feedback">Select a customer.</div>
-            </div>
+        <div class="tab-content" id="adminTabContent">
+          <!-- PRODUCTS -->
+          <div class="tab-pane fade show active" id="admin-products" role="tabpanel">
+            <div class="section-card">
+              <div class="section-header">
+                <div>
+                  <h2 class="section-title">Products</h2>
+                  <div class="section-subtitle">Inventory, filters, quick actions & export</div>
+                </div>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-outline-secondary" id="btnExportProducts"><i class="bi bi-download me-1"></i>Export CSV</button>
+                  <button class="btn btn-outline-primary" id="btnRefreshProducts"><i class="bi bi-arrow-repeat me-1"></i>Refresh</button>
+                </div>
+              </div>
 
-            <div class="col-lg-4">
-              <label class="form-label">Employee</label>
-              <select class="form-select" id="selEmployee" required></select>
-              <div class="invalid-feedback">Select an employee.</div>
-            </div>
+              <!-- KPIs -->
+              <div class="row g-3 mb-3">
+                <div class="col-sm-4">
+                  <div class="kpi-card"><div class="kpi-label">Total SKUs</div><div class="kpi-value" id="kpiSkus">0</div></div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="kpi-card"><div class="kpi-label">Low-stock SKUs</div><div class="kpi-value" id="kpiLow">0</div></div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="kpi-card"><div class="kpi-label">Avg Price</div><div class="kpi-value" id="kpiAvg">$0.00</div></div>
+                </div>
+              </div>
 
-            <div class="col-lg-4">
-              <label class="form-label">Employee PIN</label>
-              <input id="inpPin" type="password" class="form-control" placeholder="Enter PIN" required />
-              <div class="invalid-feedback">Enter a PIN (demo accepts anything).</div>
-            </div>
-          </div>
+              <!-- Toolbar -->
+              <div class="row g-2 align-items-end mb-2">
+                <div class="col-lg-4">
+                  <label class="form-label">Search</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input id="txtSearch" type="search" class="form-control" placeholder="name, category, sport..." />
+                    <button id="btnClearSearch" class="btn btn-outline-secondary" type="button">Clear</button>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <label class="form-label">Category</label>
+                  <select id="selCategory" class="form-select">
+                    <option value="">All</option>
+                  </select>
+                </div>
+                <div class="col-sm-3">
+                  <label class="form-label">Sport</label>
+                  <select id="selSport" class="form-select">
+                    <option value="">All</option>
+                  </select>
+                </div>
+                <div class="col-sm-2">
+                  <label class="form-label">Sort</label>
+                  <select id="selSort" class="form-select">
+                    <option value="name-asc">Name (A–Z)</option>
+                    <option value="price-asc">Price (low→high)</option>
+                    <option value="price-desc">Price (high→low)</option>
+                    <option value="stock-asc">Stock (low→high)</option>
+                    <option value="stock-desc">Stock (high→low)</option>
+                  </select>
+                </div>
+              </div>
 
-          <hr/>
-
-          <div class="row">
-            <div class="col-lg-8">
-              <div id="lines" class="vstack gap-2"></div>
-            </div>
-
-            <!-- Live Summary (sticky on desktop) -->
-            <div class="col-lg-4">
-              <div class="summary-card" id="liveSummary">
-                <div class="d-flex justify-content-between"><span>Subtotal</span><strong id="sumSubtotal">$0.00</strong></div>
-                <div class="d-flex justify-content-between"><span>Tax (est.)</span><strong id="sumTax">$0.00</strong></div>
-                <div class="d-flex justify-content-between total"><span>Total (est.)</span><strong id="sumTotal">$0.00</strong></div>
-                <button class="btn btn-primary w-100 mt-3" id="btnReview" type="button"><i class="bi bi-eye me-1"></i>Review</button>
-                <button class="btn btn-outline-primary w-100 mt-2" id="btnSubmitDirect" type="submit"><i class="bi bi-box-arrow-in-right me-1"></i>Submit Now</button>
+              <!-- Table -->
+              <div class="table-responsive">
+                <table class="table table-sm table-hover align-middle sticky-header" id="tblProducts">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>Name</th><th>Category</th><th>Sport</th>
+                      <th class="text-end">Price</th><th class="text-end">Stock</th><th class="text-end">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+                <div id="emptyProducts" class="text-center text-muted py-3 d-none">No products match the filters.</div>
               </div>
             </div>
           </div>
-        </form>
 
-        <div id="orderResult" class="d-none">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h4 class="h5">Order Created</h4>
-              <div id="orderSummary"></div>
+          <!-- NEW ORDER -->
+          <div class="tab-pane fade" id="admin-neworder" role="tabpanel">
+            <div class="section-card">
+              <div class="section-header">
+                <div>
+                  <h2 class="section-title">New Order</h2>
+                  <div class="section-subtitle">1) Customer • 2) Lines • 3) Review & Submit</div>
+                </div>
+                <div class="d-flex gap-2">
+                  <button type="button" class="btn btn-outline-secondary" id="btnAddLine"><i class="bi bi-plus-circle me-1"></i>Add Line</button>
+                  <button type="button" class="btn btn-outline-danger" id="btnClear"><i class="bi bi-x-circle me-1"></i>Clear</button>
+                </div>
+              </div>
+
+              <form id="orderForm" class="mb-3" novalidate>
+                <div class="row g-3">
+                  <div class="col-lg-4">
+                    <label class="form-label">Customer</label>
+                    <select class="form-select" id="selCustomer" required></select>
+                    <div class="invalid-feedback">Select a customer.</div>
+                  </div>
+
+                  <div class="col-lg-4">
+                    <label class="form-label">Employee</label>
+                    <select class="form-select" id="selEmployee" required></select>
+                    <div class="invalid-feedback">Select an employee.</div>
+                  </div>
+
+                  <div class="col-lg-4">
+                    <label class="form-label">Employee PIN</label>
+                    <input id="inpPin" type="password" class="form-control" placeholder="Enter PIN" required />
+                    <div class="invalid-feedback">Enter a PIN (demo accepts anything).</div>
+                  </div>
+                </div>
+
+                <hr/>
+
+                <div class="row">
+                  <div class="col-lg-8">
+                    <div id="lines" class="vstack gap-2"></div>
+                  </div>
+
+                  <!-- Live Summary (sticky on desktop) -->
+                  <div class="col-lg-4">
+                    <div class="summary-card" id="liveSummary">
+                      <div class="d-flex justify-content-between"><span>Subtotal</span><strong id="sumSubtotal">$0.00</strong></div>
+                      <div class="d-flex justify-content-between"><span>Tax (est.)</span><strong id="sumTax">$0.00</strong></div>
+                      <div class="d-flex justify-content-between total"><span>Total (est.)</span><strong id="sumTotal">$0.00</strong></div>
+                      <button class="btn btn-primary w-100 mt-3" id="btnReview" type="button"><i class="bi bi-eye me-1"></i>Review</button>
+                      <button class="btn btn-outline-primary w-100 mt-2" id="btnSubmitDirect" type="submit"><i class="bi bi-box-arrow-in-right me-1"></i>Submit Now</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+              <div id="orderResult" class="d-none">
+                <div class="card shadow-sm">
+                  <div class="card-body">
+                    <h4 class="h5">Order Created</h4>
+                    <div id="orderSummary"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Modal -->
+            <div class="modal fade" id="reviewModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Review Order</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div id="reviewHeader" class="mb-3"></div>
+                    <div class="table-responsive">
+                      <table class="table table-sm">
+                        <thead class="table-secondary"><tr><th>Product</th><th class="text-end">Qty</th><th class="text-end">Unit</th><th class="text-end">Line</th></tr></thead>
+                        <tbody id="reviewLines"></tbody>
+                      </table>
+                    </div>
+                    <div class="text-end">
+                      <div>Subtotal: <strong id="revSubtotal">$0.00</strong></div>
+                      <div>Tax (est.): <strong id="revTax">$0.00</strong></div>
+                      <div>Total (est.): <strong id="revTotal" class="text-success">$0.00</strong></div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Back</button>
+                    <button class="btn btn-primary" id="btnConfirmPlace">Place Order</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Review Modal -->
-      <div class="modal fade" id="reviewModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Review Order</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div id="reviewHeader" class="mb-3"></div>
+          <!-- ORDERS -->
+          <div class="tab-pane fade" id="admin-orders" role="tabpanel">
+            <div class="section-card">
+              <div class="section-header">
+                <div>
+                  <h2 class="section-title">Orders</h2>
+                  <div class="section-subtitle">History and quick analytics</div>
+                </div>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-outline-secondary" id="btnExportOrders"><i class="bi bi-download me-1"></i>Export CSV</button>
+                  <button class="btn btn-outline-primary" id="btnRefreshOrders"><i class="bi bi-arrow-repeat me-1"></i>Refresh</button>
+                </div>
+              </div>
+
+              <!-- KPI strip -->
+              <div class="row g-3 mb-3">
+                <div class="col-sm-4">
+                  <div class="kpi-card"><div class="kpi-label">Today Revenue</div><div class="kpi-value" id="kpiTodayRev">$0.00</div></div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="kpi-card"><div class="kpi-label">Today Orders</div><div class="kpi-value" id="kpiTodayOrd">0</div></div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="kpi-card"><div class="kpi-label">Avg Order Value</div><div class="kpi-value" id="kpiAOVOrders">$0.00</div></div>
+                </div>
+              </div>
+
               <div class="table-responsive">
-                <table class="table table-sm">
-                  <thead class="table-secondary"><tr><th>Product</th><th class="text-end">Qty</th><th class="text-end">Unit</th><th class="text-end">Line</th></tr></thead>
-                  <tbody id="reviewLines"></tbody>
+                <table class="table table-sm table-striped align-middle" id="tblOrders">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>#</th><th>Date</th><th>Customer</th><th>Employee</th>
+                      <th class="text-end">Subtotal</th><th class="text-end">Tax</th><th class="text-end">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
                 </table>
               </div>
-              <div class="text-end">
-                <div>Subtotal: <strong id="revSubtotal">$0.00</strong></div>
-                <div>Tax (est.): <strong id="revTax">$0.00</strong></div>
-                <div>Total (est.): <strong id="revTotal" class="text-success">$0.00</strong></div>
+              <div class="text-muted small">Tip: Click a row to see details.</div>
+            </div>
+
+            <!-- Offcanvas Details -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="orderDrawer" aria-labelledby="orderDrawerLabel">
+              <div class="offcanvas-header">
+                <h5 id="orderDrawerLabel">Order Details</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <div id="drawerContent">Loading…</div>
               </div>
             </div>
-            <div class="modal-footer">
-              <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Back</button>
-              <button class="btn btn-primary" id="btnConfirmPlace">Place Order</button>
+          </div>
+
+          <!-- REPORTS -->
+          <div class="tab-pane fade" id="admin-reports" role="tabpanel">
+            <h2 class="h4 mb-3">Reports</h2>
+
+            <!-- KPIs + Export toolbar -->
+            <div class="row g-3 mb-3 align-items-stretch" id="kpis">
+              <div class="col-12 col-md-4 col-xl-3">
+                <div class="kpi-card h-100">
+                  <div class="kpi-label">This Month Revenue</div>
+                  <div class="kpi-value" id="kpiRevenue">$0.00</div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 col-xl-3">
+                <div class="kpi-card h-100">
+                  <div class="kpi-label">This Month Orders</div>
+                  <div class="kpi-value" id="kpiOrders">0</div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 col-xl-3">
+                <div class="kpi-card h-100">
+                  <div class="kpi-label">Avg Order Value</div>
+                  <div class="kpi-value" id="kpiAOV">$0.00</div>
+                </div>
+              </div>
+
+              <div class="col-12 col-xl-3 d-flex">
+                <div class="reports-toolbar ms-xl-auto w-100">
+                  <button class="btn btn-outline-secondary" id="btnExportTop"><i class="bi bi-download me-1"></i>Top Products</button>
+                  <button class="btn btn-outline-secondary" id="btnExportLow"><i class="bi bi-download me-1"></i>Low Stock</button>
+                  <button class="btn btn-outline-secondary" id="btnExportRbm"><i class="bi bi-download me-1"></i>Revenue/Month</button>
+                  <button class="btn btn-outline-secondary" id="btnExportEmp"><i class="bi bi-download me-1"></i>Employee Stats</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-card">
+              <div class="section-header">
+                <div><h3 class="section-title">Top Products</h3><div class="section-subtitle">Best sellers by units & revenue</div></div>
+              </div>
+              <div class="row g-3">
+                <div class="col-lg-6">
+                  <div class="table-responsive">
+                    <table class="table table-sm" id="tblTopProducts">
+                      <thead class="table-secondary"><tr><th>Product</th><th class="text-end">Units</th><th class="text-end">Revenue</th></tr></thead>
+                      <tbody></tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-lg-6"><canvas id="chartTopProducts" height="220"></canvas></div>
+              </div>
+            </div>
+
+            <div class="section-card">
+              <div class="section-header">
+                <div><h3 class="section-title">Low Stock</h3><div class="section-subtitle">Items at or below safety threshold</div></div>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-sm" id="tblLowStock">
+                  <thead class="table-secondary"><tr><th>Product</th><th class="text-end">Stock</th></tr></thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="section-card">
+              <div class="section-header">
+                <div><h3 class="section-title">Revenue by Month</h3><div class="section-subtitle">Trend of total revenue over time</div></div>
+              </div>
+              <div class="row g-3">
+                <div class="col-lg-6">
+                  <div class="table-responsive">
+                    <table class="table table-sm" id="tblRevByMonth">
+                      <thead class="table-secondary"><tr><th>Month</th><th class="text-end">Revenue</th></tr></thead>
+                      <tbody></tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-lg-6"><canvas id="chartRevenue" height="220"></canvas></div>
+              </div>
+            </div>
+
+            <div class="section-card">
+              <div class="section-header">
+                <div><h3 class="section-title">Employee Stats</h3><div class="section-subtitle">Orders and revenue by employee</div></div>
+              </div>
+              <div class="row g-3">
+                <div class="col-lg-6">
+                  <div class="table-responsive">
+                    <table class="table table-sm" id="tblEmpStats">
+                      <thead class="table-secondary"><tr><th>Employee</th><th class="text-end">Orders</th><th class="text-end">Revenue</th></tr></thead>
+                      <tbody></tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-lg-6"><canvas id="chartEmp" height="220"></canvas></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============= ORDERS ============= -->
-    <section class="tab-pane fade" id="tab-orders" role="tabpanel">
-      <div class="section-card">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title">Orders</h2>
-            <div class="section-subtitle">History and quick analytics</div>
+    <!-- ============= EMPLOYEE (PLACEHOLDER) ============= -->
+    <section class="tab-pane fade" id="tab-employee" role="tabpanel">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-card text-center p-5">
+              <div class="mb-4">
+                <i class="bi bi-person-badge" style="font-size: 4rem; color: var(--crimson);"></i>
+              </div>
+              <h2 class="section-title mb-3">Employee Portal</h2>
+              <p class="text-muted lead">This section is under development. Employee features will be available here soon.</p>
+            </div>
           </div>
-          <div class="d-flex gap-2">
-            <button class="btn btn-outline-secondary" id="btnExportOrders"><i class="bi bi-download me-1"></i>Export CSV</button>
-            <button class="btn btn-outline-primary" id="btnRefreshOrders"><i class="bi bi-arrow-repeat me-1"></i>Refresh</button>
-          </div>
-        </div>
-
-        <!-- KPI strip -->
-        <div class="row g-3 mb-3">
-          <div class="col-sm-4">
-            <div class="kpi-card"><div class="kpi-label">Today Revenue</div><div class="kpi-value" id="kpiTodayRev">$0.00</div></div>
-          </div>
-          <div class="col-sm-4">
-            <div class="kpi-card"><div class="kpi-label">Today Orders</div><div class="kpi-value" id="kpiTodayOrd">0</div></div>
-          </div>
-          <div class="col-sm-4">
-            <div class="kpi-card"><div class="kpi-label">Avg Order Value</div><div class="kpi-value" id="kpiAOVOrders">$0.00</div></div>
-          </div>
-        </div>
-
-        <div class="table-responsive">
-          <table class="table table-sm table-striped align-middle" id="tblOrders">
-            <thead class="table-dark">
-              <tr>
-                <th>#</th><th>Date</th><th>Customer</th><th>Employee</th>
-                <th class="text-end">Subtotal</th><th class="text-end">Tax</th><th class="text-end">Total</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-        <div class="text-muted small">Tip: Click a row to see details.</div>
-      </div>
-
-      <!-- Offcanvas Details -->
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="orderDrawer" aria-labelledby="orderDrawerLabel">
-        <div class="offcanvas-header">
-          <h5 id="orderDrawerLabel">Order Details</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <div id="drawerContent">Loading…</div>
         </div>
       </div>
     </section>
 
-<!-- ============= REPORTS ============= -->
-<section class="tab-pane fade" id="tab-reports" role="tabpanel" aria-label="reports">
-  <h2 class="h4 mb-3">Reports</h2>
-
-  <!-- KPIs + Export toolbar (no overlap, responsive) -->
-  <div class="row g-3 mb-3 align-items-stretch" id="kpis">
-    <div class="col-12 col-md-4 col-xl-3">
-      <div class="kpi-card h-100">
-        <div class="kpi-label">This Month Revenue</div>
-        <div class="kpi-value" id="kpiRevenue">$0.00</div>
-      </div>
-    </div>
-    <div class="col-12 col-md-4 col-xl-3">
-      <div class="kpi-card h-100">
-        <div class="kpi-label">This Month Orders</div>
-        <div class="kpi-value" id="kpiOrders">0</div>
-      </div>
-    </div>
-    <div class="col-12 col-md-4 col-xl-3">
-      <div class="kpi-card h-100">
-        <div class="kpi-label">Avg Order Value</div>
-        <div class="kpi-value" id="kpiAOV">$0.00</div>
-      </div>
-    </div>
-
-    <!-- Export toolbar stacks on small screens, right-aligns on xl+ -->
-    <div class="col-12 col-xl-3 d-flex">
-      <div class="reports-toolbar ms-xl-auto w-100">
-        <button class="btn btn-outline-secondary" id="btnExportTop"><i class="bi bi-download me-1"></i>Top Products</button>
-        <button class="btn btn-outline-secondary" id="btnExportLow"><i class="bi bi-download me-1"></i>Low Stock</button>
-        <button class="btn btn-outline-secondary" id="btnExportRbm"><i class="bi bi-download me-1"></i>Revenue/Month</button>
-        <button class="btn btn-outline-secondary" id="btnExportEmp"><i class="bi bi-download me-1"></i>Employee Stats</button>
-      </div>
-    </div>
   </div>
-
-  <div class="section-card">
-    <div class="section-header">
-      <div><h3 class="section-title">Top Products</h3><div class="section-subtitle">Best sellers by units & revenue</div></div>
-    </div>
-    <div class="row g-3">
-      <div class="col-lg-6">
-        <div class="table-responsive">
-          <table class="table table-sm" id="tblTopProducts">
-            <thead class="table-secondary"><tr><th>Product</th><th class="text-end">Units</th><th class="text-end">Revenue</th></tr></thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-      <div class="col-lg-6"><canvas id="chartTopProducts" height="220"></canvas></div>
-    </div>
-  </div>
-
-  <div class="section-card">
-    <div class="section-header">
-      <div><h3 class="section-title">Low Stock</h3><div class="section-subtitle">Items at or below safety threshold</div></div>
-    </div>
-    <div class="table-responsive">
-      <table class="table table-sm" id="tblLowStock">
-        <thead class="table-secondary"><tr><th>Product</th><th class="text-end">Stock</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="section-card">
-    <div class="section-header">
-      <div><h3 class="section-title">Revenue by Month</h3><div class="section-subtitle">Trend of total revenue over time</div></div>
-    </div>
-    <div class="row g-3">
-      <div class="col-lg-6">
-        <div class="table-responsive">
-          <table class="table table-sm" id="tblRevByMonth">
-            <thead class="table-secondary"><tr><th>Month</th><th class="text-end">Revenue</th></tr></thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-      <div class="col-lg-6"><canvas id="chartRevenue" height="220"></canvas></div>
-    </div>
-  </div>
-
-  <div class="section-card">
-    <div class="section-header">
-      <div><h3 class="section-title">Employee Stats</h3><div class="section-subtitle">Orders and revenue by employee</div></div>
-    </div>
-    <div class="row g-3">
-      <div class="col-lg-6">
-        <div class="table-responsive">
-          <table class="table table-sm" id="tblEmpStats">
-            <thead class="table-secondary"><tr><th>Employee</th><th class="text-end">Orders</th><th class="text-end">Revenue</th></tr></thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-      <div class="col-lg-6"><canvas id="chartEmp" height="220"></canvas></div>
-    </div>
-  </div>
-</section>
-
-</div>
 </main>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+  // Helper function to show tabs and update nav states
+  function showTab(tabId) {
+    // Hide all tabs
+    document.querySelectorAll('.tab-pane').forEach(tab => {
+      tab.classList.remove('show', 'active');
+    });
+    
+    // Show target tab
+    const targetTab = document.getElementById(tabId);
+    if (targetTab) {
+      targetTab.classList.add('show', 'active');
+    }
+    
+    // Update nav link states
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('data-bs-target') === '#' + tabId) {
+        link.classList.add('active');
+      }
+    });
+  }
+</script>
 <script src="app.js"></script>
 </body>
 </html>

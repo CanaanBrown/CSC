@@ -698,19 +698,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cbb4b\\.nuget\\packages\\": {}
+    "C:\\Users\\jklin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cbb4b\\Downloads\\School Downloads\\MIS330\\Crimson Sports Collectibles\\CrimsonApi\\CrimsonApi.csproj",
+      "projectUniqueName": "C:\\Users\\jklin\\OneDrive\\Desktop\\MIS 330\\groupproj\\CSC\\CrimsonApi\\CrimsonApi.csproj",
       "projectName": "CrimsonApi",
-      "projectPath": "C:\\Users\\cbb4b\\Downloads\\School Downloads\\MIS330\\Crimson Sports Collectibles\\CrimsonApi\\CrimsonApi.csproj",
-      "packagesPath": "C:\\Users\\cbb4b\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cbb4b\\Downloads\\School Downloads\\MIS330\\Crimson Sports Collectibles\\CrimsonApi\\obj\\",
+      "projectPath": "C:\\Users\\jklin\\OneDrive\\Desktop\\MIS 330\\groupproj\\CSC\\CrimsonApi\\CrimsonApi.csproj",
+      "packagesPath": "C:\\Users\\jklin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jklin\\OneDrive\\Desktop\\MIS 330\\groupproj\\CSC\\CrimsonApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\cbb4b\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\jklin\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -734,7 +734,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -776,7 +776,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

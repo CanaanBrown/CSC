@@ -36,3 +36,41 @@ C:\Users\cbb4b\Downloads\School Downloads\MIS330\Crimson Sports Collectibles\Cri
 C:\Users\cbb4b\Downloads\School Downloads\MIS330\Crimson Sports Collectibles\CrimsonApi\obj\Debug\net9.0\CrimsonApi.pdb
 C:\Users\cbb4b\Downloads\School Downloads\MIS330\Crimson Sports Collectibles\CrimsonApi\obj\Debug\net9.0\CrimsonApi.genruntimeconfig.cache
 C:\Users\cbb4b\Downloads\School Downloads\MIS330\Crimson Sports Collectibles\CrimsonApi\obj\Debug\net9.0\ref\CrimsonApi.dll
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\bin\Debug\net9.0\appsettings.json
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\bin\Debug\net9.0\CrimsonApi.staticwebassets.endpoints.json
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\bin\Debug\net9.0\CrimsonApi.exe
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\bin\Debug\net9.0\CrimsonApi.deps.json
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\bin\Debug\net9.0\CrimsonApi.runtimeconfig.json
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\bin\Debug\net9.0\CrimsonApi.dll
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\bin\Debug\net9.0\CrimsonApi.pdb
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\bin\Debug\net9.0\Dapper.dll
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\bin\Debug\net9.0\MySqlConnector.dll
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\CrimsonApi.csproj.AssemblyReference.cache
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\CrimsonApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\CrimsonApi.AssemblyInfoInputs.cache
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\CrimsonApi.AssemblyInfo.cs
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\CrimsonApi.csproj.CoreCompileInputs.cache
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\CrimsonApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\CrimsonApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\CrimsonApi.sourcelink.json
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\scopedcss\bundle\CrimsonApi.styles.css
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\CrimsonApi.csproj.Up2Date
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\CrimsonApi.dll
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\refint\CrimsonApi.dll
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\CrimsonApi.pdb
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\CrimsonApi.genruntimeconfig.cache
+C:\Users\jklin\OneDrive\Desktop\MIS 330\groupproj\CSC\CrimsonApi\obj\Debug\net9.0\ref\CrimsonApi.dll
