@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrimsonApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab03d5761670f27a64c8c4f01c804871d00e1395")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d09eb1f970ee080098481cb853838a2a4d4a7f40")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrimsonApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrimsonApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

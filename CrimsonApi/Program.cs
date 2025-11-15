@@ -1,6 +1,9 @@
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Text;
 using MySqlConnector;
 using Dapper;
+using BCrypt.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
@@ -36,6 +39,135 @@ app.UseCors("DevAll");
 // app.UseStaticFiles();
 
 app.UseHttpsRedirection();
+
+// -------------------- Authentication Endpoints --------------------
+
+// Sign up
+app.MapPost("/api/auth/signup", async (MySqlConnection db, SignupRequest req) =>
+{
+    try
+    {
+        await db.OpenAsync();
+        
+        // Check if email already exists
+        var existing = await db.QueryFirstOrDefaultAsync<dynamic>(
+            "SELECT user_id FROM users WHERE email = @email",
+            new { email = req.Email }
+        );
+        
+        if (existing != null)
+        {
+            await db.CloseAsync();
+            return Results.BadRequest(new { message = "Email already registered" });
+        }
+        
+        // Hash password
+        var passwordHash = BCrypt.Net.BCrypt.HashPassword(req.Password);
+        
+        // Insert user
+        const string sql = @"INSERT INTO users (name, email, password_hash)
+                             VALUES (@name, @email, @passwordHash);
+                             SELECT LAST_INSERT_ID();";
+        
+        var userId = await db.ExecuteScalarAsync<long>(sql, new
+        {
+            name = req.Name,
+            email = req.Email,
+            passwordHash
+        });
+        
+        await db.CloseAsync();
+        
+        // Generate simple token (in production, use JWT)
+        var token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(32));
+        
+        return Results.Ok(new
+        {
+            token,
+            user = new { userId, name = req.Name, email = req.Email }
+        });
+    }
+    catch (Exception ex)
+    {
+        if (db.State == System.Data.ConnectionState.Open)
+        {
+            await db.CloseAsync();
+        }
+        return Results.Problem(
+            detail: ex.Message,
+            statusCode: 500,
+            title: "Signup failed"
+        );
+    }
+});
+
+// Login
+app.MapPost("/api/auth/login", async (MySqlConnection db, LoginRequest req) =>
+{
+    try
+    {
+        await db.OpenAsync();
+        
+        var user = await db.QueryFirstOrDefaultAsync<dynamic>(
+            "SELECT user_id, name, email, password_hash FROM users WHERE email = @email",
+            new { email = req.Email }
+        );
+        
+        if (user == null)
+        {
+            await db.CloseAsync();
+            return Results.Unauthorized();
+        }
+        
+        // Verify password
+        if (!BCrypt.Net.BCrypt.Verify(req.Password, user.password_hash))
+        {
+            await db.CloseAsync();
+            return Results.Unauthorized();
+        }
+        
+        // Update last login
+        await db.ExecuteAsync(
+            "UPDATE users SET last_login = NOW() WHERE user_id = @userId",
+            new { userId = user.user_id }
+        );
+        
+        await db.CloseAsync();
+        
+        // Generate simple token (in production, use JWT)
+        var token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(32));
+        
+        return Results.Ok(new
+        {
+            token,
+            user = new { userId = user.user_id, name = user.name, email = user.email }
+        });
+    }
+    catch (Exception ex)
+    {
+        if (db.State == System.Data.ConnectionState.Open)
+        {
+            await db.CloseAsync();
+        }
+        return Results.Problem(
+            detail: ex.Message,
+            statusCode: 500,
+            title: "Login failed"
+        );
+    }
+});
+
+// Check auth (simple token check)
+app.MapGet("/api/auth/check", async (HttpRequest req) =>
+{
+    var token = req.Headers["Authorization"].ToString().Replace("Bearer ", "");
+    if (string.IsNullOrEmpty(token))
+    {
+        return Results.Unauthorized();
+    }
+    // In production, validate JWT token properly
+    return Results.Ok(new { authenticated = true });
+});
 
 // -------------------- Endpoints --------------------
 
@@ -279,4 +411,18 @@ public class TransactionLine
 public class StockAdjust
 {
     public int Delta { get; set; }
+}
+
+public class SignupRequest
+{
+    public string Name { get; set; } = "";
+    public string Email { get; set; } = "";
+    public string Password { get; set; } = "";
+}
+
+public class LoginRequest
+{
+    public string Email { get; set; } = "";
+    public string Password { get; set; } = "";
+    public bool RememberMe { get; set; }
 }
